@@ -3,37 +3,48 @@ using namespace std;
 
 int main() { 
 
-    int Bd, Md, Yd, Cd, Cm, Cy;
+    int BirthDay, BirthMonth, BirthYear, CurrentDay, CurrentMonth, CurrentYear;
     
     cout << "Enter birthday: ";
-    cin >> Bd;
+    cin >> BirthDay;
     cout << "Enter month of birth: ";
-    cin >> Md;
+    cin >> BirthMonth;
     cout << "Enter the year of birth: ";
-    cin >> Yd;
+    cin >> BirthYear;
     cout << "Enter the current day: ";
-    cin >> Cd;
+    cin >> CurrentDay;
     cout << "Enter the current month: ";
-    cin >> Cm;
+    cin >> CurrentMonth;
     cout << "Enter the current year: ";
-    cin >> Cy;
+    cin >> CurrentYear;
     
-    int ageYears = Cy - Yd;
-    int ageMonths = Cm - Md;
-    int ageDays = Cd - Bd;
-    
-   
-   if ( Cy > Yd  ) { 
-  	cout << "The person is " << ageYears - 1 << " years old" << endl;
-   } 
-    
-   cout << "The person is " << ageMonths + 11 << " months old" << endl;
-	
-   if ( ageDays < 0 ) {
- 	cout << "The person has " << ageDays + 30 << " days completed" << endl;
-   } else {
-	cout << "The person has " << ageDays << " days" << endl;
-   }	
+    int ageYears = CurrentYear - BirthYear;
+    int ageMonths = CurrentMonth - BirthMonth;
+    int ageDays = CurrentDay - BirthDay;
+
+    bool isCurrentDayAfterBirthDay = CurrentDay >= BirthDay;
+
+    if (CurrentMonth < BirthMonth || (CurrentMonth == BirthMonth && !isCurrentDayAfterBirthDay)) {
+        ageYears--;
+    }
+
+    cout << "The person is " << ageYears << " years old" << endl;
+
+    if (isCurrentDayAfterBirthDay) {
+        ageMonths--;
+    }
+
+    cout << "The person is " << ageMonths << " months old" << endl;
+
+    if (CurrentMonth == BirthMonth) {
+        cout << "The person is " << ageMonths + 12 << " months old" << endl;
+    }
+
+    if ( ageDays < 0 ) {
+ 	 cout << "The person has " << ageDays + 31 << " days completed" << endl;
+    } else {
+	 cout << "The person has " << ageDays << " days" << endl;
+    }
     
    return 0;
 }
