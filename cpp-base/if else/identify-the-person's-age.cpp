@@ -22,13 +22,18 @@ int main() {
     int ageMonths = Cm - Md;
     int ageDays = Cd - Bd;
     
-    if ( Cm - Md ) { 
-	cout << "The person is " << ageYears - 1 << " years old" << endl;
-    } else { 	
-	cout << "The person is " << ageYears << " years old" << endl;	
-    }
-    cout << "The person is " << ageMonths + 12 << " months old" << endl;
-    cout << "The person has " << ageDays << " days" << endl;
-
-    return 0;
+   
+   if ( Cy > Yd  ) { 
+  	cout << "The person is " << ageYears - 1 << " years old" << endl;
+   } 
+    
+   cout << "The person is " << ageMonths + 11 << " months old" << endl;
+	
+   if ( ageDays < 0 ) {
+ 	cout << "The person has " << ageDays + 30 << " days completed" << endl;
+   } else {
+	cout << "The person has " << ageDays << " days" << endl;
+   }	
+    
+   return 0;
 }
