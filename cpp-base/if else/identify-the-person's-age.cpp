@@ -30,15 +30,21 @@ int main() {
 
     cout << "The person is " << ageYears << " years old" << endl;
 
-    if (isCurrentDayAfterBirthDay) {
-        ageMonths--;
-    }
+//    if (isCurrentDayAfterBirthDay) {
+//        ageMonths--;
+//    }
+//
+//    cout << "The person is " << ageMonths << " months old" << endl;
 
-    cout << "The person is " << ageMonths << " months old" << endl;
+    bool isCurrenMonthAfterBirhtMonth = CurrentMonth >= BirthMonth;
 
     if (CurrentMonth == BirthMonth) {
-        cout << "The person is " << ageMonths + 12 << " months old" << endl;
-    }
+        cout << "The person is " << ageMonths + 11 << " months old" << endl;
+    } else if  ( CurrentMonth < BirthMonth && !isCurrenMonthAfterBirhtMonth ) {
+    	cout << "The person is " << ageMonths + 12 << " months old" << endl;
+	} else {
+    	cout << "The person is " << ageMonths << " months old" << endl;
+	}
 
     if ( ageDays < 0 ) {
  	 cout << "The person has " << ageDays + 31 << " days completed" << endl;
