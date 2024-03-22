@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    int k, nr_prec_1 = 1, nr_prec_2 = 1, result;
+    
+    cout << "k= ";
+    cin >> k;
+    
+    int i = 1;
+    
+    while (result <= k) {
+        result = nr_prec_2 + nr_prec_1;
+        nr_prec_2 = nr_prec_1;
+        nr_prec_1 = result;  
+    }
+    
+    cout << "Primul termen din sir mai mare decat " << k << " este: " << result << endl;
+    
+    return 0;
+}
+
+
