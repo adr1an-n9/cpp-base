@@ -1,48 +1,46 @@
 #include <iostream>
 using namespace std;
-
 int main()
 {
-    int i, number1, number2;
+    int nr1, nr2, nrfinal, nrfinalmare;
+    int k = 0;
+    int m = 0;
     
-    cout << "Number 1 = ";
-    cin >> number1;
+    cout << "nr1 = ";
+    cin >> nr1;
+    cout << "nr2 = ";
+    cin >> nr2;
     
-    cout << "Number 2 = ";
-    cin >> number2;
+    nrfinal = (nr1 < nr2) ? nr1 : nr2;
     
-    for ( i = number1; i >= 1; i-- ) {
-      if (number1 % i == 0 && number2 % i == 0) {
-         cout << i << " "; 
-         break; 
-      } 
+    cout << nrfinal;
+    
+    cout << endl;
+    
+    for ( int i = 1; i <= nrfinal; i++ ) {
+        // cout << i << " ";
+        
+        if ( ( nr1 % i == 0 ) && ( nr2 % i == 0 ) ) {
+            // cout << i;
+            if ( k < i ) {
+                k = i;
+            }
+        }
+        
     }
     
-//    cout << endl;
-//    
-//    for ( i = number2; i >= 1; i++ ) {
-//      if (number2 % i == 0 && number1 % i == 0) {
-//         cout << i << " "; 
-//         break; 
-//      } 
-//    }
+    cout << "Cel mai mare divizor comun este: " << k << endl;
+     
+    nrfinalmare = ( nr1 > nr2 ) ? nr1 : nr2;
     
+    
+    for ( int i = 1; i <= nrfinalmare; i++ ) {
+        // cout << i * nrfinalmare << " ";
+
+    if ( (i * nrfinalmare) % nrfinal == 0 ){
+        cout << "Cel mai mic multiplu comun este: " << i * nrfinalmare << endl;
+        break;
+        }
+    }
     return 0;
 }
-
-
-
-
-/*
-n1 = 4  
-n2 = 30 
-cel mai mare divizor comun - cifra cea mai mare care se imparte si n1 si n2 [ 2 ]
-cel mai mic multiplu comun - cifra cea mai mica care este imparte si cu n1 si cu n2 [ 60 ]
-
-
-n1 = nr>nr1 / 2
-n1 = 4 = 1 2 3 4 
-n2 = 30 = 1...30 
-rez = n2/n1 = ? 
-
-*/
