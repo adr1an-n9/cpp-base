@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    int n, nr_prec_1 = 1, nr_prec_2 = 1, result;
+    
+    cout << "n= ";
+    cin >> n;
+    
+    if ( n <= 2 ) {
+        cout << 1;
+      return 0; 
+    }
+    
+    for (int i = 1; i <= n; i++) {
+    result = nr_prec_2 + nr_prec_1;
+    nr_prec_2 = nr_prec_1;
+    nr_prec_1 = result;
+    
+    }
+    cout << result;
+    
+    return 0;
+}
+
+
