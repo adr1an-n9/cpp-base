@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    string sentence;
+
+    cout << "Sentence: ";
+    cin >> sentence;
+    
+    int lettA = 0; int lettB = 0; 
+    
+    for (char c : sentence) { 
+        if (c == 'a' || c == 'A') {
+            lettA++; 
+        } else if (c == 'b' || c == 'B') {
+            lettB++; 
+        }
+    }
+
+    cout << "The number of presses for the letter 'a': " << lettA << endl;
+    cout << "The number of presses for the letter 'b': " << lettB << endl;
+    
+return 0;
+}
