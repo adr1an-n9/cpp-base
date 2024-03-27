@@ -7,7 +7,6 @@ int main() {
     int numbers[] = {5, 2, 8, 1, 6};
     int n = sizeof(numbers) / sizeof(numbers[0]);
 
-    // Sorting the array
     sort(numbers, numbers + n);
 
     cout << "The sorted array is: ";
