@@ -1,0 +1,51 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int n, t;
+
+    cout << "Enter the number of elements for the array (between 1 and 100): ";
+    cin >> n;
+
+    if (n < 1 || n > 100) {
+        cout << "The entered number must be between 1 and 100." << endl;
+        return 1;
+    }
+
+    cout << "Enter the natural number t (1 < t < n): ";
+    cin >> t;
+
+    if (t < 1 || t >= n) {
+        cout << "The entered number must be between 1 and " << n - 1 << "." << endl;
+        return 1;
+    }
+
+    int array[100];
+
+    cout << "Enter the elements of the array: ";
+    for (int i = 0; i < n; ++i) {
+        cin >> array[i];
+    }
+
+    // Sorting in ascending order for the first t components
+    sort(array, array + t);
+
+    // Sorting in descending order for the rest of the components
+    sort(array + t, array + n, greater<int>());
+
+    cout << "The first " << t << " components of the array, sorted in ascending order, are: ";
+    for (int i = 0; i < t; ++i) {
+        cout << array[i] << " ";
+    }
+    cout << endl;
+
+    cout << "The rest of the components of the array, sorted in descending order, are: ";
+    for (int i = t; i < n; ++i) {
+        cout << array[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
