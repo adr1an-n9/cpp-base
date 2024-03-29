@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+
+    cout << "Enter the number of elements for the Fibonacci sequence (between 1 and 100): ";
+    cin >> n;
+
+    if (n < 1 || n > 100) {
+        cout << "The entered number must be between 1 and 100." << endl;
+        return 1;
+    }
+
+    int fib[100] = {1, 1}; // Declare and initialize the first two terms of the Fibonacci sequence
+
+    // Generate the rest of the Fibonacci sequence elements
+    for (int i = 2; i < n; ++i) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+
+    // Display the Fibonacci sequence elements
+    cout << "The first " << n << " elements of the Fibonacci sequence are: ";
+    for (int i = 0; i < n; ++i) {
+        cout << fib[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
