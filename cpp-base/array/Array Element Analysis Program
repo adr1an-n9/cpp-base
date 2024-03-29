@@ -1,0 +1,59 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    
+    int n = 100;
+    cout << "how many elements do you want in the array n: ";
+    cin >> n;
+    int vector[n], array_element, even_elements, non_zero_elements, divisible_elements, 
+    divisible_elements_2, absolute_elements;
+    
+    cout << "enter " << n << " integer elements:" << endl;
+    
+    cout << "There are a total of " << n << " values." << endl;
+    
+    for (int i = 0; i < n; i++ ) {
+        cout << "enter element " << i + 1 << ": ";
+        cin >> vector[i];
+        
+        if (vector[i] < 0) {
+            array_element++;
+        }
+        
+        if (vector[i] % 2 == 0) {
+            even_elements++;
+        }
+        
+        if (vector[i] != 0) {
+            non_zero_elements++;
+        }
+        
+        if (vector[i] % 3 == 0 && vector[i] % 5 == 0) {
+            divisible_elements++;
+        }
+        
+        if (vector[i] % 7 == 0 || vector[i] % 9 == 0 || vector[i] % 11 == 0) {
+            divisible_elements_2++;
+        }
+        
+        if ((abs(vector[i])) > 3) {
+            absolute_elements++;
+        }
+    }
+    
+    cout << "a) There are a total of " << array_element << " negative values." << endl;
+    
+    cout << "b) There are a total of " << even_elements << " even values." << endl;
+    
+    cout << "c) There are a total of " << non_zero_elements << " non-zero values." << endl;
+    
+    cout << "d) There are a total of " << divisible_elements << " positive values divisible by 3 and 5." << endl;
+    
+    cout << "e) There are a total of " << divisible_elements_2 << " values divisible by at least 7, 9, or 11." << endl;
+    
+    cout << "f) There are a total of " << absolute_elements << " values whose absolute value is greater than 3." << endl;
+
+    return 0;
+}
